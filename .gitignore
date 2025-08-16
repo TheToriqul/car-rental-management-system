@@ -58,6 +58,9 @@ Thumbs.db
 src/main/resources/database/*.db
 src/main/resources/database/*.db-journal
 
+# Documentation folder (exclude from git)
+docs/
+
 # Temporary files
 *.tmp
 *.temp
