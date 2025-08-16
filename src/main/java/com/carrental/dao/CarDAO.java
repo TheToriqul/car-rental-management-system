@@ -27,7 +27,7 @@ public class CarDAO {
     String query = "INSERT INTO cars (make, model, year, license_plate, color, status, daily_rate) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     try (Connection conn = DatabaseManager.getConnection();
-        PreparedStatement pstmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
 
       pstmt.setString(1, car.getMake());
       pstmt.setString(2, car.getModel());
@@ -40,7 +40,9 @@ public class CarDAO {
       int affectedRows = pstmt.executeUpdate();
 
       if (affectedRows > 0) {
-        try (ResultSet rs = pstmt.getGeneratedKeys()) {
+        // Get the generated ID using last_insert_rowid() for SQLite
+        try (Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT last_insert_rowid()")) {
           if (rs.next()) {
             car.setId(rs.getInt(1));
             return true;
@@ -197,6 +199,21 @@ public class CarDAO {
 
     try (Connection conn = DatabaseManager.getConnection();
         PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+      pstmt.setString(1, status);
+      pstmt.setInt(2, carId);
+
+      return pstmt.executeUpdate() > 0;
+    }
+  }
+
+  /**
+   * Update car status with provided connection (for transaction management)
+   */
+  public boolean updateCarStatusWithConnection(int carId, String status, Connection connection) throws SQLException {
+    String query = "UPDATE cars SET status = ? WHERE id = ?";
+
+    try (PreparedStatement pstmt = connection.prepareStatement(query)) {
 
       pstmt.setString(1, status);
       pstmt.setInt(2, carId);

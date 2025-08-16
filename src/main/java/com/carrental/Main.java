@@ -5,7 +5,6 @@ import java.awt.Toolkit;
 
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 
 import com.carrental.gui.LoginFrame;
 import com.carrental.util.DatabaseManager;
@@ -19,13 +18,6 @@ import com.carrental.util.DatabaseManager;
 public class Main {
 
   public static void main(String[] args) {
-    // Set system look and feel
-    try {
-      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeel());
-    } catch (Exception e) {
-      System.err.println("Error setting look and feel: " + e.getMessage());
-    }
-
     // Initialize database
     try {
       DatabaseManager.initializeDatabase();

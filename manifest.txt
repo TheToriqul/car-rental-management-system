@@ -1,8 +1,1 @@
-Manifest-Version: 1.0
 Main-Class: com.carrental.Main
-Class-Path: lib/sqlite-jdbc-3.44.1.0.jar lib/commons-codec-1.15.jar lib/commons-lang3-3.12.0.jar
-
-Created-By: Md Toriqul Islam
-Implementation-Title: Car Rental Management System
-Implementation-Version: 1.0.0
-Implementation-Vendor: INTI International University

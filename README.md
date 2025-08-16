@@ -41,6 +41,13 @@ This project is developed as part of the **PRG2201E Programming Coursework** at 
 - **Revenue Statistics**: Financial reports and analytics
 - **Export Functionality**: Generate reports in various formats
 
+### 👤 User Management (Admin)
+
+- **User Account Management**: Create, edit, delete user accounts
+- **Role Assignment**: Assign Admin or Staff roles
+- **User Search**: Find users by username or role
+- **Access Control**: Manage system access permissions
+
 ### 🔍 Search & Filter
 
 - **Advanced Search**: Search cars by multiple criteria
@@ -52,55 +59,42 @@ This project is developed as part of the **PRG2201E Programming Coursework** at 
 - **Backend**: Java 15+
 - **GUI Framework**: Java Swing
 - **Database**: SQLite with JDBC
-- **Build Tool**: Maven
-- **Architecture**: MVC Pattern with DAO Design Pattern
+- **Build System**: Custom scripts with automated dependency management
+- **Dependencies**: SQLite JDBC, Apache Commons Codec, Apache Commons Lang3, SLF4J
+- **Architecture**: MVC Pattern with DAO Design Pattern and Service Layer
 
 ## 📁 Project Structure
 
 ```
 car-rental-management-system/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── carrental/
-│   │   │           ├── model/          # Entity classes
-│   │   │           ├── dao/            # Data Access Objects
-│   │   │           ├── service/        # Business Logic
-│   │   │           ├── gui/            # User Interface
-│   │   │           ├── util/           # Utilities
-│   │   │           └── Main.java       # Application entry point
-│   │   └── resources/
-│   │       └── database/
-│   │           └── carrental.db        # SQLite database
-├── docs/                               # Documentation
-├── screenshots/                        # Application screenshots
-├── pom.xml                            # Maven configuration
-└── README.md                          # Project documentation
+├── 📦 src/main/java/com/carrental/
+│   ├── model/               # Domain Entities (User, Car, Customer, Rental)
+│   ├── dao/                 # Data Access Layer (UserDAO, CarDAO, CustomerDAO, RentalDAO)
+│   ├── service/             # Business Logic Layer (AuthService, CarService, etc.)
+│   ├── gui/                 # Presentation Layer (LoginFrame, AdminDashboard, etc.)
+│   ├── util/                # Utility Classes (DatabaseManager)
+│   └── Main.java            # Application entry point
+├── 📚 docs/                 # Project Documentation
+│   ├── deliverables/        # User Manual, Demo Script, Project Summary
+│   ├── technical/           # Architecture and Database Schema
+│   └── project-planning/    # Project Requirements and Implementation Plan
+├── 🔧 scripts/              # Build & Deployment Scripts
+│   ├── build.sh/.bat        # Automated build process
+│   ├── run.sh/.bat          # Application launcher
+│   ├── clean.sh/.bat        # Build artifact cleanup
+│   ├── test.sh/.bat         # Test execution
+│   └── setup.sh/.bat        # Environment setup
+├── 🏗️ build/                # Build Artifacts
+├── 📸 screenshots/          # Application Screenshots
+└── 📖 README.md             # This file
 ```
-
-## 🗄️ Database Schema
-
-### Core Tables
-
-- **users**: User accounts and authentication
-- **cars**: Car inventory and details
-- **customers**: Customer information
-- **rentals**: Rental transactions and history
-
-### Relationships
-
-- Users can manage multiple rentals
-- Cars can have multiple rental records
-- Customers can have multiple rental history
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 - Java 15 or higher
-- Maven 3.6+
-- SQLite JDBC Driver (included in pom.xml)
+- Internet connection (for initial dependency download)
 
 ### Installation
 
@@ -114,22 +108,27 @@ car-rental-management-system/
 2. **Build the project**
 
    ```bash
-   mvn clean install
+   # Windows
+   scripts\build.bat
+
+   # Linux/macOS
+   ./scripts/build.sh
    ```
 
 3. **Run the application**
+
    ```bash
-   java -jar target/car-rental-management-system-1.0.0.jar
+   # Windows
+   scripts\run.bat
+
+   # Linux/macOS
+   ./scripts/run.sh
    ```
 
 ### Default Login Credentials
 
 - **Admin**: username: `admin`, password: `admin123`
 - **Staff**: username: `staff`, password: `staff123`
-
-## 📸 Screenshots
-
-_Screenshots will be added as the project develops_
 
 ## 🎯 User Roles & Permissions
 
@@ -149,6 +148,18 @@ _Screenshots will be added as the project develops_
 - ✅ Generate basic reports
 - ✅ Limited administrative access
 
+## 📚 Documentation
+
+### Essential Documents
+
+- **[User Manual](docs/deliverables/USER_MANUAL.md)** - Complete system usage guide
+- **[Technical Architecture](docs/technical/architecture.md)** - System design documentation
+- **[Database Schema](docs/technical/database-schema.md)** - Database design documentation
+- **[Database Features](docs/technical/database-features.md)** - Advanced database implementation
+- **[System Design Diagrams](docs/technical/system-design-diagrams.md)** - Mermaid diagrams
+- **[Project Summary](docs/deliverables/FINAL_PROJECT_SUMMARY.md)** - Complete project overview
+- **[Demo Script](docs/deliverables/DEMO_SCRIPT.md)** - Presentation guide
+
 ## 🔧 Development
 
 ### Architecture Patterns
@@ -164,25 +175,19 @@ _Screenshots will be added as the project develops_
 - **Exception Handling**: Robust error management
 - **Input Validation**: Data integrity protection
 - **Security**: SQL injection prevention, password hashing
+- **Database Features**: Transactions, prepared statements, ACID properties
 
 ## 📊 Project Status
 
-- [x] Project planning and requirements analysis
-- [x] Database schema design
-- [x] Core backend implementation
-- [x] Basic GUI framework
-- [ ] Complete GUI development
-- [ ] Testing and debugging
-- [ ] Documentation completion
-- [ ] Final submission preparation
+**🎉 Project Status: COMPLETE & FULLY FUNCTIONAL**
 
-## 🤝 Contributing
-
-This is an academic project for PRG2201E Programming Coursework. For questions or suggestions, please contact the development team.
-
-## 📝 License
-
-This project is developed for educational purposes as part of the PRG2201E Programming Coursework at INTI International University.
+- ✅ All core requirements implemented
+- ✅ Complete CRUD operations for all entities
+- ✅ Role-based access control
+- ✅ Professional user interface
+- ✅ Comprehensive reporting system
+- ✅ Cross-platform build scripts
+- ✅ Complete documentation
 
 ## 👨‍💻 Developer
 
@@ -197,11 +202,10 @@ This project is developed for educational purposes as part of the PRG2201E Progr
 - 🌐 [Portfolio](https://thetoriqul.com/)
 - 💼 [LinkedIn](https://linkedin.com/in/thetoriqul)
 - 🐦 [Twitter](https://twitter.com/TheToriqul_X)
-- 📧 Email: [Contact via Portfolio](https://thetoriqul.com/)
 
 ## 📚 Course Information
 
-- **Course**: PRG2201E Programming
+- **Course**: PRG2201E - Object Oriented Programming
 - **Institution**: INTI International University
 - **Semester**: August 2025
 - **Project Type**: Group Assignment

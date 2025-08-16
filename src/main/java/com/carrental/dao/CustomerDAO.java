@@ -27,7 +27,7 @@ public class CustomerDAO {
     String query = "INSERT INTO customers (name, email, phone, address) VALUES (?, ?, ?, ?)";
 
     try (Connection conn = DatabaseManager.getConnection();
-        PreparedStatement pstmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
 
       pstmt.setString(1, customer.getName());
       pstmt.setString(2, customer.getEmail());
@@ -37,7 +37,9 @@ public class CustomerDAO {
       int affectedRows = pstmt.executeUpdate();
 
       if (affectedRows > 0) {
-        try (ResultSet rs = pstmt.getGeneratedKeys()) {
+        // Get the generated ID using last_insert_rowid() for SQLite
+        try (Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT last_insert_rowid()")) {
           if (rs.next()) {
             customer.setId(rs.getInt(1));
             return true;

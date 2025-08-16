@@ -23,16 +23,6 @@ import com.carrental.util.DatabaseManager;
  */
 public class RentalDAO {
 
-  private CarDAO carDAO;
-  private CustomerDAO customerDAO;
-  private UserDAO userDAO;
-
-  public RentalDAO() {
-    this.carDAO = new CarDAO();
-    this.customerDAO = new CustomerDAO();
-    this.userDAO = new UserDAO();
-  }
-
   /**
    * Create a new rental
    */
@@ -40,7 +30,7 @@ public class RentalDAO {
     String query = "INSERT INTO rentals (car_id, customer_id, staff_id, start_date, end_date, total_cost, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     try (Connection conn = DatabaseManager.getConnection();
-        PreparedStatement pstmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
 
       pstmt.setInt(1, rental.getCarId());
       pstmt.setInt(2, rental.getCustomerId());
@@ -53,7 +43,42 @@ public class RentalDAO {
       int affectedRows = pstmt.executeUpdate();
 
       if (affectedRows > 0) {
-        try (ResultSet rs = pstmt.getGeneratedKeys()) {
+        // Get the generated ID using last_insert_rowid() for SQLite
+        try (Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT last_insert_rowid()")) {
+          if (rs.next()) {
+            rental.setId(rs.getInt(1));
+            return true;
+          }
+        }
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Create a new rental with provided connection (for transaction management)
+   */
+  public boolean createRentalWithConnection(Rental rental, Connection connection) throws SQLException {
+    String query = "INSERT INTO rentals (car_id, customer_id, staff_id, start_date, end_date, total_cost, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    try (PreparedStatement pstmt = connection.prepareStatement(query)) {
+
+      pstmt.setInt(1, rental.getCarId());
+      pstmt.setInt(2, rental.getCustomerId());
+      pstmt.setInt(3, rental.getStaffId());
+      pstmt.setDate(4, java.sql.Date.valueOf(rental.getStartDate()));
+      pstmt.setDate(5, java.sql.Date.valueOf(rental.getEndDate()));
+      pstmt.setBigDecimal(6, rental.getTotalCost());
+      pstmt.setString(7, rental.getStatus());
+
+      int affectedRows = pstmt.executeUpdate();
+
+      if (affectedRows > 0) {
+        // Get the generated ID using last_insert_rowid() for SQLite
+        try (Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT last_insert_rowid()")) {
           if (rs.next()) {
             rental.setId(rs.getInt(1));
             return true;
@@ -242,6 +267,22 @@ public class RentalDAO {
   }
 
   /**
+   * Update rental status with provided connection (for transaction management)
+   */
+  public boolean updateRentalStatusWithConnection(int rentalId, String status, Connection connection)
+      throws SQLException {
+    String query = "UPDATE rentals SET status = ? WHERE id = ?";
+
+    try (PreparedStatement pstmt = connection.prepareStatement(query)) {
+
+      pstmt.setString(1, status);
+      pstmt.setInt(2, rentalId);
+
+      return pstmt.executeUpdate() > 0;
+    }
+  }
+
+  /**
    * Delete rental
    */
   public boolean deleteRental(int id) throws SQLException {
@@ -299,6 +340,28 @@ public class RentalDAO {
   }
 
   /**
+   * Get revenue for a specific staff member
+   */
+  public BigDecimal getRevenueByStaffId(int staffId) throws SQLException {
+    String query = "SELECT SUM(total_cost) FROM rentals WHERE status = 'COMPLETED' AND staff_id = ?";
+
+    try (Connection conn = DatabaseManager.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+      pstmt.setInt(1, staffId);
+
+      try (ResultSet rs = pstmt.executeQuery()) {
+        if (rs.next()) {
+          BigDecimal revenue = rs.getBigDecimal(1);
+          return revenue != null ? revenue : BigDecimal.ZERO;
+        }
+      }
+    }
+
+    return BigDecimal.ZERO;
+  }
+
+  /**
    * Map ResultSet to Rental object
    */
   private Rental mapResultSetToRental(ResultSet rs) throws SQLException {
@@ -326,15 +389,8 @@ public class RentalDAO {
       rental.setCreatedDate(createdDate.toLocalDateTime());
     }
 
-    // Load related objects
-    try {
-      rental.setCar(carDAO.getCarById(rental.getCarId()));
-      rental.setCustomer(customerDAO.getCustomerById(rental.getCustomerId()));
-      rental.setStaff(userDAO.getUserById(rental.getStaffId()));
-    } catch (Exception e) {
-      // Log error but don't fail the mapping
-      System.err.println("Error loading related objects for rental " + rental.getId() + ": " + e.getMessage());
-    }
+    // Don't load related objects here to avoid statement pointer issues
+    // They will be loaded separately when needed
 
     return rental;
   }

@@ -1,14 +1,15 @@
 package com.carrental.service;
 
-import com.carrental.dao.UserDAO;
-import com.carrental.model.User;
-import com.carrental.util.DatabaseManager;
-import org.apache.commons.codec.digest.DigestUtils;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
+import com.carrental.dao.UserDAO;
+import com.carrental.model.User;
+import com.carrental.util.DatabaseManager;
 
 /**
  * Service class for handling user authentication and session management
@@ -17,14 +18,14 @@ import java.sql.SQLException;
  * @version 1.0.0
  */
 public class AuthenticationService {
-    
-    private User currentUser = null;
+
+    private static User currentUser = null;
     private UserDAO userDAO;
-    
+
     public AuthenticationService() {
         this.userDAO = new UserDAO();
     }
-    
+
     /**
      * Authenticate user with username and password
      */
@@ -32,16 +33,16 @@ public class AuthenticationService {
         try {
             // Hash the password for comparison
             String hashedPassword = hashPassword(password);
-            
+
             // Query to check credentials
             String query = "SELECT id, username, password, role FROM users WHERE username = ? AND password = ?";
-            
+
             try (Connection conn = DatabaseManager.getConnection();
-                 PreparedStatement pstmt = conn.prepareStatement(query)) {
-                
+                    PreparedStatement pstmt = conn.prepareStatement(query)) {
+
                 pstmt.setString(1, username);
                 pstmt.setString(2, hashedPassword);
-                
+
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (rs.next()) {
                         // Create user object
@@ -50,68 +51,68 @@ public class AuthenticationService {
                         currentUser.setUsername(rs.getString("username"));
                         currentUser.setPassword(rs.getString("password"));
                         currentUser.setRole(rs.getString("role"));
-                        
+
                         return true;
                     }
                 }
             }
-            
+
         } catch (SQLException e) {
             System.err.println("Authentication error: " + e.getMessage());
         }
-        
+
         return false;
     }
-    
+
     /**
      * Get current authenticated user
      */
     public User getCurrentUser() {
         return currentUser;
     }
-    
+
     /**
      * Get current user role
      */
     public String getCurrentUserRole() {
         return currentUser != null ? currentUser.getRole() : null;
     }
-    
+
     /**
      * Check if user is authenticated
      */
     public boolean isAuthenticated() {
         return currentUser != null;
     }
-    
+
     /**
      * Check if current user is admin
      */
     public boolean isAdmin() {
         return "ADMIN".equals(getCurrentUserRole());
     }
-    
+
     /**
      * Check if current user is staff
      */
     public boolean isStaff() {
         return "STAFF".equals(getCurrentUserRole());
     }
-    
+
     /**
      * Logout current user
      */
-    public void logout() {
+    public static void logout() {
         currentUser = null;
     }
-    
+
     /**
      * Hash password using SHA-256
      */
     private String hashPassword(String password) {
         return DigestUtils.sha256Hex(password);
     }
-    
+
     /**
      * Create new user account (Admin only)
      */
@@ -119,7 +120,7 @@ public class AuthenticationService {
         if (!isAdmin()) {
             return false;
         }
-        
+
         try {
             String hashedPassword = hashPassword(password);
             return userDAO.createUser(username, hashedPassword, role);
@@ -128,7 +129,7 @@ public class AuthenticationService {
             return false;
         }
     }
-    
+
     /**
      * Update user password
      */

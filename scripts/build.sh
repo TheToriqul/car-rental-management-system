@@ -31,6 +31,18 @@ if [ ! -f "build/lib/commons-lang3-3.12.0.jar" ]; then
         "https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar"
 fi
 
+if [ ! -f "build/lib/slf4j-api-1.7.36.jar" ]; then
+    echo "Downloading SLF4J API..."
+    curl -L -o build/lib/slf4j-api-1.7.36.jar \
+        "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar"
+fi
+
+if [ ! -f "build/lib/slf4j-simple-1.7.36.jar" ]; then
+    echo "Downloading SLF4J Simple..."
+    curl -L -o build/lib/slf4j-simple-1.7.36.jar \
+        "https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar"
+fi
+
 # Build classpath
 CLASSPATH="build/lib/*:build/classes"
 
