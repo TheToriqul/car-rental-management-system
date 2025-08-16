@@ -127,8 +127,8 @@ car-rental-management-system/
 
 ### Default Login Credentials
 
-- **Admin**: username: `admin`, password: `admin123`
-- **Staff**: username: `staff`, password: `staff123`
+- **Admin**: username: `Toriq`, password: `toriq123`
+- **Staff**: username: `Jenesh`, password: `jenesh123`
 
 ## 🎯 User Roles & Permissions
 

@@ -66,7 +66,7 @@ echo 1. Run build.bat to compile the project
 echo 2. Run run.bat to start the application
 echo.
 echo Default login credentials:
-echo - Admin: admin / admin123
-echo - Staff: staff / staff123
+echo - Admin: Toriq / toriq123
+echo - Staff: Jenesh / jenesh123
 echo.
 pause

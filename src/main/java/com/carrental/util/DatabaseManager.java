@@ -155,16 +155,16 @@ public class DatabaseManager {
      */
     private static void insertDefaultData() throws SQLException {
         // Check if default admin user exists
-        String checkAdminQuery = "SELECT COUNT(*) FROM users WHERE username = 'admin'";
+        String checkAdminQuery = "SELECT COUNT(*) FROM users WHERE username = 'Toriq'";
         try (Statement stmt = connection.createStatement();
                 ResultSet rs = stmt.executeQuery(checkAdminQuery)) {
 
             if (rs.next() && rs.getInt(1) == 0) {
                 // Insert default admin user with hashed password
-                String hashedAdminPassword = hashPassword("admin123");
+                String hashedAdminPassword = hashPassword("toriq123");
                 String insertAdminQuery = """
                             INSERT INTO users (username, password, role)
-                            VALUES ('admin', ?, 'ADMIN')
+                            VALUES ('Toriq', ?, 'ADMIN')
                         """;
                 try (PreparedStatement pstmt = connection.prepareStatement(insertAdminQuery)) {
                     pstmt.setString(1, hashedAdminPassword);
@@ -172,10 +172,10 @@ public class DatabaseManager {
                 }
 
                 // Insert default staff user with hashed password
-                String hashedStaffPassword = hashPassword("staff123");
+                String hashedStaffPassword = hashPassword("jenesh123");
                 String insertStaffQuery = """
                             INSERT INTO users (username, password, role)
-                            VALUES ('staff', ?, 'STAFF')
+                            VALUES ('Jenesh', ?, 'STAFF')
                         """;
                 try (PreparedStatement pstmt = connection.prepareStatement(insertStaffQuery)) {
                     pstmt.setString(1, hashedStaffPassword);
