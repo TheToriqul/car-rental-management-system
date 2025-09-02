@@ -189,12 +189,6 @@ java -jar build/car-rental-management-system.jar
 ### Essential Documents
 
 - **[User Manual](docs/deliverables/USER_MANUAL.md)** - Complete system usage guide
-- **[Technical Architecture](docs/technical/architecture.md)** - System design documentation
-- **[Database Schema](docs/technical/database-schema.md)** - Database design documentation
-- **[Database Features](docs/technical/database-features.md)** - Advanced database implementation
-- **[System Design Diagrams](docs/technical/system-design-diagrams.md)** - Mermaid diagrams
-- **[Project Summary](docs/deliverables/FINAL_PROJECT_SUMMARY.md)** - Complete project overview
-- **[Demo Script](docs/deliverables/DEMO_SCRIPT.md)** - Presentation guide
 
 ### Screenshots & Visual Documentation
 
