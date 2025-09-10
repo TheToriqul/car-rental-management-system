@@ -2,122 +2,102 @@
 
 This directory contains screenshots for the Car Rental Management System final report.
 
-## Required Screenshots
+## Available Screenshots
 
-The following screenshots need to be captured and placed in this directory to complete the final report:
+The following screenshots have been captured and are available in this directory:
 
-### 1. System Architecture Screenshots
+### 1. System Architecture Screenshots (system/ directory)
 
-- `system-architecture.png` - System architecture diagram showing layered design
-- `database-erd.png` - Database Entity Relationship Diagram
-- `ui-flow.png` - User Interface flow diagram
+- [2.1 System Architecture Diagram.png](system/2.1%20System%20Architecture%20Diagram.png) - System architecture diagram showing layered design
+- [2.2 Database Entity Relationship Diagram.png](system/2.2%20Database%20Entity%20Relationship%20Diagram.png) - Database Entity Relationship Diagram
+- [2.3 User Interface Flow Diagram.png](system/2.3%20User%20Interface%20Flow%20Diagram.png) - User Interface flow diagram
 
-### 2. Flowchart Screenshots
+### 2. Flowchart Screenshots (system/ directory)
 
-- `database-connection-flowchart.png` - Database connection and initialization flowchart
-- `ui-navigation-flowchart.png` - User interface navigation flowchart
-- `car-rental-workflow.png` - Car rental business process workflow
-- `user-authentication-flowchart.png` - User authentication and authorization flowchart
+- [2.4 Database Connection Flowchart.png](system/2.4%20Database%20Connection%20Flowchart.png) - Database connection and initialization flowchart
+- [2.5 User Interface Navigation Flow.png](system/2.5%20User%20Interface%20Navigation%20Flow.png) - User interface navigation flowchart
+- [2.6 Car Rental Workflow Flowchart.png](system/2.6%20Car%20Rental%20Workflow%20Flowchart.png) - Car rental business process workflow
+- [2.7 User Authentication Flowchart.png](system/2.7%20User%20Authentication%20Flowchart.png) - User authentication and authorization flowchart
 
 ### 3. Application Interface Screenshots
 
-- `login-interface.png` - Main login interface with project information
-- `admin-dashboard.png` - Admin dashboard with navigation cards
-- `staff-dashboard.png` - Staff dashboard with role-specific functions
-- `user-management.png` - User management interface
-- `car-management.png` - Car inventory management interface
-- `customer-management.png` - Customer database management
-- `rental-management.png` - Rental workflow interface
-- `reports-interface.png` - Reports and analytics interface
+- [Login.png](Login.png) - Main login interface with project information
+- [Admin Dashboard.png](Admin%20Dashboard.png) - Admin dashboard with navigation cards
+- [Staff Dashboard.png](Staff%20Dashboard.png) - Staff dashboard with role-specific functions
+- [User Management.png](User%20Management.png) - User management interface
+- [Car Management.png](Car%20Management.png) - Car inventory management interface
+- [Customer Management.png](Customer%20Management.png) - Customer database management
+- [Rental Management.png](Rental%20Management.png) - Rental workflow interface
+- [Revenue Statistics.png](Revenue%20Statistics.png) - Reports and analytics interface
+- [Car Availability.png](Car%20Availability.png) - Car availability and search interface
+- [Car Search.png](Car%20Search.png) - Car search functionality
+- [Rental History.png](Rental%20History.png) - Rental history and records
+- [System Overview.png](System%20Overview.png) - System overview dashboard
 
-## Flowchart Creation Guidelines
+## Directory Structure
 
-### Required Flowcharts
+The screenshots are organized as follows:
 
-The following flowcharts need to be created and added to the screenshots directory:
+```
+screenshots/
+├── README.md                           # This documentation file
+├── system/                            # System architecture and flowcharts
+│   ├── 2.1 System Architecture Diagram.png
+│   ├── 2.2 Database Entity Relationship Diagram.png
+│   ├── 2.3 User Interface Flow Diagram.png
+│   ├── 2.4 Database Connection Flowchart.png
+│   ├── 2.5 User Interface Navigation Flow.png
+│   ├── 2.6 Car Rental Workflow Flowchart.png
+│   └── 2.7 User Authentication Flowchart.png
+├── Login.png                          # Main login interface
+├── Admin Dashboard.png                # Admin dashboard
+├── Staff Dashboard.png                # Staff dashboard
+├── User Management.png                # User management interface
+├── Car Management.png                 # Car inventory management
+├── Customer Management.png            # Customer database management
+├── Rental Management.png              # Rental workflow interface
+├── Revenue Statistics.png             # Reports and analytics
+├── Car Availability.png               # Car availability interface
+├── Car Search.png                     # Car search functionality
+├── Rental History.png                 # Rental history and records
+└── System Overview.png                # System overview dashboard
+```
 
-#### 1. Database Connection Flowchart (`database-connection-flowchart.png`)
+## Screenshot Information
 
-- **Purpose**: Show database initialization process
-- **Content**: Application start → Driver loading → Connection → Table creation → Sample data → Ready
-- **Style**: Use standard flowchart symbols (rectangles, diamonds, arrows)
+### System Architecture Screenshots
 
-#### 2. User Interface Navigation Flowchart (`ui-navigation-flowchart.png`)
+The `system/` directory contains all the architectural diagrams and flowcharts created using Mermaid charts. These include:
 
-- **Purpose**: Show user navigation through the system
-- **Content**: Login → Authentication → Role check → Dashboard → Feature selection → Operations
-- **Style**: Hierarchical flow with decision points
+- **System Architecture Diagram**: Shows the layered design of the application
+- **Database ERD**: Entity Relationship Diagram for the database schema
+- **UI Flow Diagram**: User interface navigation flow
+- **Database Connection Flowchart**: Database initialization process
+- **UI Navigation Flowchart**: User navigation through the system
+- **Car Rental Workflow**: Complete rental business process
+- **User Authentication Flowchart**: Secure authentication process
 
-#### 3. Car Rental Workflow Flowchart (`car-rental-workflow.png`)
+### Application Interface Screenshots
 
-- **Purpose**: Show complete rental business process
-- **Content**: Customer inquiry → Availability check → Booking → Checkout → Rental period → Return
-- **Style**: Business process flow with customer and staff interactions
+The main directory contains screenshots of the actual application interfaces:
 
-#### 4. User Authentication Flowchart (`user-authentication-flowchart.png`)
-
-- **Purpose**: Show secure authentication process
-- **Content**: Input validation → Password hashing → Database lookup → Role assignment → Dashboard
-- **Style**: Security-focused flow with error handling paths
-
-### Flowchart Design Requirements
-
-- **Resolution**: Minimum 1280x720 pixels
-- **Format**: PNG format for clarity
-- **Colors**: Use professional color scheme (blue, green, red for decision points)
-- **Symbols**: Standard flowchart symbols (rectangles for processes, diamonds for decisions)
-- **Text**: Clear, readable labels for each step
-- **Flow**: Logical progression with clear decision points and outcomes
-
-## Screenshot Guidelines
-
-### Quality Requirements
-
-- **Resolution**: Minimum 1280x720 pixels
-- **Format**: PNG or JPG format
-- **Quality**: High quality, clear and readable text
-- **File Size**: Optimize for reasonable file sizes
-
-### Content Requirements
-
-- **Login Screen**: Show the beautiful login interface with INTI branding
-- **Dashboards**: Display the main navigation and overview panels
-- **Management Screens**: Show the CRUD operations and search functionality
-- **Reports**: Display sample data and analytics
-
-### Capture Instructions
-
-1. **Login Screen**: Launch application and capture the login interface
-2. **Admin Functions**: Login as admin (Toriq/toriq123) and capture each management screen
-3. **Staff Functions**: Login as staff (Jenesh/jenesh123) and capture staff dashboard
-4. **Workflow**: Capture the rental process from checkout to return
-5. **Reports**: Generate sample reports and capture the analytics interface
+- **Login Interface**: Main login screen with INTI branding
+- **Admin Dashboard**: Admin user interface with full system access
+- **Staff Dashboard**: Staff user interface with limited access
+- **Management Interfaces**: CRUD operations for users, cars, customers, and rentals
+- **Search and Availability**: Car search and availability checking
+- **Reports and Analytics**: Revenue statistics and rental history
+- **System Overview**: General system overview dashboard
 
 ## Default Login Credentials
 
 - **Admin**: username: `Toriq`, password: `toriq123`
 - **Staff**: username: `Jenesh`, password: `jenesh123`
 
-## File Naming Convention
-
-Use descriptive names that match the references in the final report:
-
-- `system-architecture.png`
-- `database-erd.png`
-- `ui-flow.png`
-- `login-interface.png`
-- `admin-dashboard.png`
-- `staff-dashboard.png`
-- `user-management.png`
-- `car-management.png`
-- `customer-management.png`
-- `rental-management.png`
-- `reports-interface.png`
-
 ## Report Integration
 
-These screenshots are referenced in the final report with proper captions and figure numbers. Each screenshot should clearly demonstrate the functionality described in the corresponding report section.
+These screenshots are referenced in the final report with proper captions and figure numbers. Each screenshot demonstrates the actual functionality of the Car Rental Management System:
 
----
-
-**Note**: All screenshots should be captured from the actual running application to ensure accuracy and demonstrate the real functionality of the system.
+- **System Architecture**: Diagrams show the technical design and data flow
+- **Application Interfaces**: Screenshots show the user interface and functionality
+- **Workflow Diagrams**: Flowcharts illustrate business processes and system operations

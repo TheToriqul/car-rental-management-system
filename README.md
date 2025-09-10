@@ -192,11 +192,15 @@ java -jar build/car-rental-management-system.jar
 
 ### Screenshots & Visual Documentation
 
-- **[Screenshots Directory](screenshots/README.md)** - Application interface captures
-- System architecture diagrams
-- Database ERD diagrams
-- User interface flowcharts
-- Business process workflows
+- **[Screenshots Directory](screenshots/README.md)** - Complete application interface captures
+- **[System Architecture](screenshots/system/2.1%20System%20Architecture%20Diagram.png)** - System design overview
+- **[Database ERD](screenshots/system/2.2%20Database%20Entity%20Relationship%20Diagram.png)** - Database schema design
+- **[Login Interface](screenshots/Login.png)** - Main login screen
+- **[Admin Dashboard](screenshots/Admin%20Dashboard.png)** - Admin user interface
+- **[Staff Dashboard](screenshots/Staff%20Dashboard.png)** - Staff user interface
+- **[Car Management](screenshots/Car%20Management.png)** - Car inventory management
+- **[Rental Management](screenshots/Rental%20Management.png)** - Rental workflow interface
+- **[Reports & Analytics](screenshots/Revenue%20Statistics.png)** - Financial reporting system
 
 ## 🔧 Development
 
@@ -279,6 +283,22 @@ java -jar build/car-rental-management-system.jar
 - **Duration**: 2 weeks
 - **Technology**: Java GUI with SQLite Database
 - **Grade**: Pending (Project Complete)
+
+## 🖼️ Visual Preview
+
+### Key Interface Screenshots
+
+|                     Login Interface                      |                                      Admin Dashboard                                       |                                     Car Management                                      |
+| :------------------------------------------------------: | :----------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: |
+| [![Login](screenshots/Login.png)](screenshots/Login.png) | [![Admin Dashboard](screenshots/Admin%20Dashboard.png)](screenshots/Admin%20Dashboard.png) | [![Car Management](screenshots/Car%20Management.png)](screenshots/Car%20Management.png) |
+
+|                                      Staff Dashboard                                       |                                        Rental Management                                         |                                         Reports & Analytics                                         |
+| :----------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
+| [![Staff Dashboard](screenshots/Staff%20Dashboard.png)](screenshots/Staff%20Dashboard.png) | [![Rental Management](screenshots/Rental%20Management.png)](screenshots/Rental%20Management.png) | [![Revenue Statistics](screenshots/Revenue%20Statistics.png)](screenshots/Revenue%20Statistics.png) |
+
+### System Architecture
+
+[![System Architecture](screenshots/system/2.1%20System%20Architecture%20Diagram.png)](screenshots/system/2.1%20System%20Architecture%20Diagram.png)
 
 ## 🚀 Quick Demo
 
