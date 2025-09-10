@@ -2,550 +2,337 @@
 
 ## 📋 Table of Contents
 
-1. [Introduction](#introduction)
-2. [System Requirements](#system-requirements)
-3. [Installation](#installation)
-4. [Getting Started](#getting-started)
-5. [User Roles](#user-roles)
-6. [Admin Functions](#admin-functions)
-7. [Staff Functions](#staff-functions)
-8. [Troubleshooting](#troubleshooting)
-9. [FAQ](#faq)
-10. [Recent Updates](#recent-updates)
+1. [What is this system?](#what-is-this-system)
+2. [How to start the program](#how-to-start-the-program)
+3. [How to log in](#how-to-log-in)
+4. [What can I do as Admin?](#what-can-i-do-as-admin)
+5. [What can I do as Staff?](#what-can-i-do-as-staff)
+6. [Common problems and solutions](#common-problems-and-solutions)
+7. [Frequently asked questions](#frequently-asked-questions)
 
 ---
 
-## 📖 Introduction
+## 📖 What is this system?
 
-The Car Rental Management System is a comprehensive Java GUI application designed to manage car rental operations efficiently. The system supports two user roles: **Admin** and **Staff**, each with specific permissions and functionalities.
+This is a computer program that helps car rental companies manage their business. Think of it as a digital filing cabinet that keeps track of all your cars, customers, and rentals in one place.
 
-**🎉 System Status: FULLY OPERATIONAL & TESTED**
+**Who uses this system?**
 
-The system has been successfully tested and verified to work perfectly on multiple platforms including macOS (darwin 24.6.0), Windows, and Linux.
+- **Admins**: People who manage the whole system (like managers)
+- **Staff**: People who help customers rent cars (like rental agents)
 
-### Key Features
+**What does it do?**
 
-- **Role-based Access Control**: Separate interfaces for Admin and Staff users
-- **Complete CRUD Operations**: Manage cars, customers, rentals, and users
-- **Advanced Search**: Search functionality across all entities
-- **Reports & Analytics**: Comprehensive reporting system
-- **Professional UI**: Modern, intuitive interface design with gradients and shadows
-- **Database Integration**: SQLite database for data persistence
-- **Cross-platform Support**: Windows, macOS, and Linux compatibility
+- Keeps track of all your rental cars
+- Stores customer information
+- Manages rental bookings
+- Tracks when cars are rented and returned
+- Creates reports for the business
+- Manages staff accounts
 
-### Recent Achievements
+**Why is it useful?**
 
-- ✅ **Successfully Tested**: Application runs perfectly on macOS
-- ✅ **Database Initialization**: SQLite database working correctly
-- ✅ **Build System**: Automated build scripts verified
-- ✅ **User Authentication**: Login system fully functional
-- ✅ **Modern Interface**: Professional UI with excellent user experience
-
----
-
-## 💻 System Requirements
-
-### Minimum Requirements
-
-- **Operating System**: Windows 10/11, macOS 10.14+, or Linux
-- **Java Runtime**: Java 15 or higher
-- **Memory**: 512MB RAM
-- **Storage**: 100MB available disk space
-- **Internet**: Required for initial dependency download
-
-### Recommended Requirements
-
-- **Operating System**: Latest version of Windows, macOS, or Linux
-- **Java Runtime**: Java 17 or higher
-- **Memory**: 1GB RAM or more
-- **Storage**: 200MB available disk space
-- **Display**: 1280x720 resolution or higher
-
-### Verified Compatibility
-
-- ✅ **macOS**: Tested on darwin 24.6.0 (September 2025)
-- ✅ **Windows**: Compatible with Windows 10/11
-- ✅ **Linux**: Compatible with major Linux distributions
-- ✅ **Java**: Tested with Java 15+ (Java 17+ recommended)
+- No more paper files to lose
+- Everything is organized and easy to find
+- Prevents double bookings
+- Tracks money and payments
+- Makes your job easier and faster
 
 ---
 
-## 🚀 Installation
+## 🚀 How to start the program
 
-### Step 1: Download the Project
+**For IT staff or managers:**
 
-```bash
-git clone https://github.com/TheToriqul/car-rental-management-system.git
-cd car-rental-management-system
-```
+The program needs to be set up first by someone who knows about computers. They will:
 
-### Step 2: Build the Application
+1. Download the program files
+2. Install Java (a program that makes this system work)
+3. Set up the database
+4. Create user accounts
 
-```bash
-# On Windows
-scripts\build.bat
+**For regular staff:**
 
-# On macOS/Linux
-chmod +x scripts/build.sh
-./scripts/build.sh
-```
+Once everything is set up, starting the program is easy:
 
-**Note**: The build script automatically downloads all required dependencies (SQLite JDBC 3.44.1.0, Apache Commons, SLF4J) and compiles the project.
+1. Find the program icon on your computer
+2. Double-click to open it
+3. Wait for the login screen to appear
+4. Enter your username and password
 
-### Step 3: Run the Application
+**What you need:**
 
-```bash
-# On Windows
-scripts\run.bat
-
-# On macOS/Linux
-chmod +x scripts/run.sh
-./scripts/run.sh
-```
-
-### Alternative: Run from JAR
-
-If the project is already built, you can run directly from the JAR file:
-
-```bash
-java -jar build/car-rental-management-system.jar
-```
+- A computer with Windows, Mac, or Linux
+- Java program installed (ask your IT person)
+- Your username and password
 
 ---
 
-## 🎯 Getting Started
+## 🔑 How to log in
 
-### 1. Launch the Application
+When you open the program, you will see a login screen with two boxes:
 
-After running the application, you'll see the login screen with a beautiful interface featuring:
+- **Username box**: Type your username here
+- **Password box**: Type your password here
 
-- Project information panel on the left
-- Login form on the right
-- INTI International University branding
-- Modern design with gradients and professional styling
+**Two types of users:**
 
-### 2. Login Credentials
+**Admin users** (like managers):
 
-#### Default Admin Account
+- Can do everything in the system
+- Can add new staff members
+- Can see all reports
+- Can manage all cars and customers
 
-- **Username**: `Toriq`
-- **Password**: `toriq123`
+**Staff users** (like rental agents):
 
-#### Default Staff Account
+- Can help customers rent cars
+- Can add new customers
+- Can see available cars
+- Cannot add new staff members
 
-- **Username**: `Jenesh`
-- **Password**: `jenesh123`
+**To log in:**
 
-### 3. Navigate the Interface
-
-- **Card-based Navigation**: Use the navigation cards to switch between different sections
-- **Modern UI**: Enjoy the professional, modern interface with gradients and shadows
-- **Responsive Design**: The interface adapts to different screen sizes
-- **Intuitive Layout**: Clean, organized interface for easy navigation
-
----
-
-## 👥 User Roles
-
-### Admin User
-
-**Permissions**:
-
-- ✅ Manage user accounts (create, edit, delete, search)
-- ✅ Manage car inventory (add, edit, delete, search)
-- ✅ View and manage customer database
-- ✅ Monitor all rental transactions
-- ✅ Generate comprehensive reports
-- ✅ Access system analytics
-- ✅ Full system administration
-
-### Staff User
-
-**Permissions**:
-
-- ✅ Process car rentals and returns
-- ✅ Manage customer information
-- ✅ Search available cars
-- ✅ View rental history
-- ✅ Access basic reports
-- ✅ Customer service operations
+1. Type your username in the first box
+2. Type your password in the second box
+3. Click the "Login" button
+4. If your information is correct, you will see the main screen
 
 ---
 
-## 👨‍💼 Admin Functions
+## 👨‍💼 What can I do as Admin?
 
-### Dashboard Overview
-
-The Admin Dashboard provides:
-
-- **System Statistics**: Overview of cars, customers, rentals, and users
-- **Quick Actions**: Direct access to main functions
-- **Recent Activity**: Latest system activities
-- **Navigation Cards**: Easy access to all admin functions
-- **Modern Design**: Professional interface with excellent visual appeal
+As an admin, you can do everything in the system. When you log in, you will see several cards (boxes) on the screen. Each card takes you to a different part of the system.
 
 ### User Management
 
-**Access**: Click on "User Management" card
+**What it does:** Add new staff members or change existing ones
+**How to use:**
 
-**Features**:
-
-- **View All Users**: See complete list of system users
-- **Add New User**: Create new staff or admin accounts
-- **Edit User**: Modify user details and roles
-- **Delete User**: Remove user accounts (with confirmation)
-- **Search Users**: Find users by username or role
-
-**How to Add a User**:
-
-1. Click "Add User" button
-2. Fill in username, password, and role
-3. Click "Save" to create the account
-
-**How to Edit a User**:
-
-1. Select a user from the table
-2. Click "Edit User" button
-3. Modify the details
-4. Click "Save" to update
+1. Click on "User Management" card
+2. To add a new person: Click "Add User" button, fill in their name and password, choose if they are Admin or Staff
+3. To change someone: Click on their name in the list, then click "Edit User"
+4. To remove someone: Click on their name, then click "Delete User"
 
 ### Car Management
 
-**Access**: Click on "Car Management" card
+**What it does:** Keep track of all your rental cars
+**How to use:**
 
-**Features**:
-
-- **View All Cars**: Complete car inventory
-- **Add New Car**: Add cars to the inventory
-- **Edit Car**: Modify car details
-- **Delete Car**: Remove cars from inventory
-- **Search Cars**: Find cars by make, model, or license plate
-- **Status Management**: Track car availability
-
-**Car Details**:
-
-- Make and Model
-- Year of manufacture
-- License plate number
-- Color
-- Daily rental rate
-- Status (Available/Rented/Maintenance)
-
-**How to Add a Car**:
-
-1. Click "Add Car" button
-2. Fill in all car details
-3. Set the daily rate
-4. Click "Save" to add to inventory
+1. Click on "Car Management" card
+2. To add a new car: Click "Add Car" button, fill in car details (make, model, year, license plate, color, daily rate)
+3. To change car info: Click on the car in the list, then click "Edit Car"
+4. To remove a car: Click on the car, then click "Delete Car"
+5. To find a car: Use the search box to type the car's make, model, or license plate
 
 ### Customer Management
 
-**Access**: Click on "Customer Management" card
+**What it does:** Keep track of all your customers
+**How to use:**
 
-**Features**:
-
-- **View All Customers**: Complete customer database
-- **Add New Customer**: Register new customers
-- **Edit Customer**: Update customer information
-- **Delete Customer**: Remove customer records
-- **Search Customers**: Find customers by name or email
-- **Rental History**: View customer rental history
+1. Click on "Customer Management" card
+2. To add a new customer: Click "Add Customer" button, fill in their name, email, phone, and address
+3. To change customer info: Click on the customer in the list, then click "Edit Customer"
+4. To find a customer: Use the search box to type their name or email
 
 ### Rental Management
 
-**Access**: Click on "Rental Management" card
+**What it does:** Keep track of all car rentals
+**How to use:**
 
-**Features**:
-
-- **View All Rentals**: Complete rental history
-- **Monitor Active Rentals**: Track ongoing rentals
-- **Process Returns**: Complete rental returns
-- **Search Rentals**: Find rentals by customer or car
-- **Status Tracking**: Monitor rental status
-
-### Reports & Analytics
-
-**Access**: Click on "Reports" card
-
-**Available Reports**:
-
-- **Rental History**: Complete rental transaction history
-- **Car Availability**: Real-time car availability status
-- **Revenue Statistics**: Financial reports and analytics
-- **System Overview**: Key system metrics
-
-**Features**:
-
-- **Export Data**: Generate reports in various formats
-- **Filter Options**: Filter reports by date, status, etc.
-- **Visual Analytics**: Charts and graphs for data visualization
-
----
-
-## 👨‍💻 Staff Functions
-
-### Dashboard Overview
-
-The Staff Dashboard provides:
-
-- **Staff-specific Statistics**: Overview of rentals and customers
-- **Quick Actions**: Direct access to staff functions
-- **Recent Activity**: Latest rental activities
-- **Navigation Cards**: Easy access to all staff functions
-- **Professional Interface**: Clean, organized layout
-
-### Rental Management
-
-**Access**: Click on "Rental Management" card
-
-**Features**:
-
-- **Create New Rental**: Process car rentals
-- **View Active Rentals**: Monitor ongoing rentals
-- **Process Returns**: Complete rental returns
-- **Search Rentals**: Find specific rentals
-
-**How to Create a Rental**:
-
-1. Click "New Rental" button
-2. Select a customer from the dropdown
-3. Select an available car
-4. Set start and end dates
-5. Review the calculated total cost
-6. Click "Create Rental" to confirm
-
-**How to Process a Return**:
-
-1. Select an active rental from the table
-2. Click "Process Return" button
-3. Confirm the return details
-4. Click "Complete Return" to finish
-
-### Customer Management
-
-**Access**: Click on "Customer Management" card
-
-**Features**:
-
-- **Add New Customer**: Register new customers
-- **Edit Customer**: Update customer information
-- **Search Customers**: Find customers by name or email
-- **View Rental History**: See customer's rental history
-
-**How to Add a Customer**:
-
-1. Click "Add Customer" button
-2. Fill in customer details (name, email, phone, address)
-3. Click "Save" to register the customer
-
-### Car Search
-
-**Access**: Click on "Car Search" card
-
-**Features**:
-
-- **View Available Cars**: See all available cars for rental
-- **Search by Make/Model**: Find specific car types
-- **Search by License Plate**: Find cars by plate number
-- **Filter by Status**: Filter by availability status
+1. Click on "Rental Management" card
+2. You can see all rentals (past and current)
+3. To process a return: Click on an active rental, then click "Process Return"
+4. To find a rental: Use the search box
 
 ### Reports
 
-**Access**: Click on "Reports" card
+**What it does:** Shows you business information and statistics
+**How to use:**
 
-**Available Reports**:
-
-- **Rental History**: View rental transactions
-- **Customer Reports**: Customer information and history
-- **Car Availability**: Check car availability status
-
----
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-#### 1. Application Won't Start
-
-**Problem**: Application fails to launch
-**Solution**:
-
-- Ensure Java 15+ is installed: `java -version`
-- Check if build was successful: Run `./scripts/build.sh` again
-- Verify internet connection for dependency download
-- Check system permissions for the project directory
-
-#### 2. Database Connection Error
-
-**Problem**: "Database initialization failed" error
-**Solution**:
-
-- Check if the database directory exists
-- Ensure write permissions in the project directory
-- Restart the application
-- Verify SQLite JDBC driver is present in build/lib/
-
-#### 3. Login Issues
-
-**Problem**: Cannot log in with default credentials
-**Solution**:
-
-- Verify username and password are correct
-- Check if the database was initialized properly
-- Try rebuilding the application
-- Ensure no other instances are running
-
-#### 4. GUI Display Issues
-
-**Problem**: Interface looks distorted or incomplete
-**Solution**:
-
-- Ensure minimum screen resolution of 1280x720
-- Update Java to the latest version
-- Check system display settings
-- Restart the application
-
-### Error Messages
-
-#### "SQLite JDBC driver not found"
-
-- **Cause**: Missing SQLite dependency
-- **Solution**: Run the build script again to download dependencies
-
-#### "Database locked"
-
-- **Cause**: Another instance of the application is running
-- **Solution**: Close other instances and restart
-
-#### "Invalid date format"
-
-- **Cause**: Date input format is incorrect
-- **Solution**: Use the date picker or enter dates in YYYY-MM-DD format
-
-### Success Indicators
-
-When the system is working correctly, you should see:
-
-- ✅ "Database initialized successfully" message
-- ✅ "Car Rental Management System started successfully" message
-- ✅ Clean, professional login interface
-- ✅ Smooth navigation between sections
-- ✅ All CRUD operations working properly
+1. Click on "Reports" card
+2. Choose what kind of report you want to see
+3. The system will show you charts and numbers about your business
 
 ---
 
-## ❓ FAQ
+## 👨‍💻 What can I do as Staff?
+
+As staff, you help customers rent cars. When you log in, you will see cards for the things you can do.
+
+### Rental Management
+
+**What it does:** Help customers rent and return cars
+**How to rent a car to a customer:**
+
+1. Click on "Rental Management" card
+2. Click "New Rental" button
+3. Choose the customer from the list
+4. Choose an available car
+5. Pick the start date and end date
+6. Check the total cost
+7. Click "Create Rental" to finish
+
+**How to return a car:**
+
+1. Click on "Rental Management" card
+2. Find the rental in the list
+3. Click "Process Return" button
+4. Check the details
+5. Click "Complete Return" to finish
+
+### Customer Management
+
+**What it does:** Add new customers or update existing ones
+**How to add a new customer:**
+
+1. Click on "Customer Management" card
+2. Click "Add Customer" button
+3. Fill in their name, email, phone number, and address
+4. Click "Save" to add them
+
+**How to find a customer:**
+
+1. Click on "Customer Management" card
+2. Use the search box to type their name or email
+3. Click on their name to see their details
+
+### Car Search
+
+**What it does:** See which cars are available for rent
+**How to use:**
+
+1. Click on "Car Search" card
+2. You will see all available cars
+3. Use the search box to find cars by make, model, or license plate
+4. You can see the daily rate for each car
+
+### Reports
+
+**What it does:** See basic reports about rentals and customers
+**How to use:**
+
+1. Click on "Reports" card
+2. Choose what you want to see
+3. The system will show you the information
+
+---
+
+## 🔧 Common problems and solutions
+
+### The program won't start
+
+**Problem:** Nothing happens when you click the program icon
+**Solution:**
+
+- Ask your IT person to check if Java is installed
+- Try restarting your computer
+- Make sure you have permission to run the program
+
+### I can't log in
+
+**Problem:** The system says my username or password is wrong
+**Solution:**
+
+- Check that you typed your username and password correctly
+- Make sure the Caps Lock key is not on
+- Ask your manager to reset your password
+
+### The screen looks strange
+
+**Problem:** Buttons are too small or the screen is hard to read
+**Solution:**
+
+- Ask your IT person to check your screen settings
+- Try making the program window bigger
+- Restart the program
+
+### I can't find a customer
+
+**Problem:** I know the customer exists but I can't find them
+**Solution:**
+
+- Try searching with just their first name or last name
+- Check if you spelled their name correctly
+- Try searching with their phone number instead
+
+### I can't rent a car
+
+**Problem:** The system won't let me create a rental
+**Solution:**
+
+- Make sure you selected both a customer and a car
+- Check that the dates are correct (start date should be today or later)
+- Make sure the car is available (not already rented)
+
+---
+
+## ❓ Frequently asked questions
 
 ### General Questions
 
-**Q: Can I change the default login credentials?**
-A: Yes, you can modify the default users through the User Management interface after logging in as admin.
+**Q: Can I change my password?**
+A: Yes, ask your manager or admin to help you change your password.
 
-**Q: Is the data persistent between application restarts?**
-A: Yes, all data is stored in the SQLite database and persists between sessions.
+**Q: What if I make a mistake?**
+A: Most mistakes can be fixed. If you accidentally delete something or enter wrong information, ask your manager to help you fix it.
 
-**Q: Can I backup the database?**
-A: Yes, the database file is located at `src/main/resources/database/carrental.db` and can be backed up.
+**Q: Can I use this on my phone?**
+A: No, this program only works on computers (Windows, Mac, or Linux).
 
-**Q: How many users can the system handle?**
-A: The system can handle hundreds of users, cars, customers, and rentals efficiently.
+**Q: What if the computer crashes while I'm using the program?**
+A: Don't worry, all your information is saved automatically. Just restart the program and everything will be there.
 
-**Q: Is the system tested and verified?**
-A: Yes, the system has been successfully tested on macOS and is compatible with Windows and Linux.
+**Q: Can I print reports?**
+A: Yes, you can print any report by clicking the print button when viewing the report.
 
-### Technical Questions
+### Customer Questions
 
-**Q: What database does the system use?**
-A: The system uses SQLite 3.44.1, which is embedded and requires no external setup.
+**Q: How do I add a customer's driver's license information?**
+A: You can add this information in the customer's address field or in a notes section if available.
 
-**Q: Can I modify the source code?**
-A: Yes, the source code is well-documented and follows clean architecture principles.
+**Q: What if a customer wants to extend their rental?**
+A: You can edit the rental to change the end date. The system will automatically calculate the new total cost.
 
-**Q: How secure is the password storage?**
-A: Passwords are hashed using SHA-256 encryption for security.
+**Q: Can I see a customer's rental history?**
+A: Yes, when you search for a customer, you can see all their past and current rentals.
 
-**Q: Can I add new features?**
-A: Yes, the modular architecture makes it easy to extend with new features.
+### Car Questions
 
-**Q: What Java version is required?**
-A: Java 15 or higher is required, with Java 17+ recommended for optimal performance.
+**Q: How do I mark a car as being repaired?**
+A: In Car Management, edit the car and change its status to "Under Maintenance".
 
-### Usage Questions
+**Q: What if a car is damaged?**
+A: You can add notes about the damage in the car's information or change its status to "Under Maintenance".
 
-**Q: How do I search for a specific car?**
-A: Use the search functionality in Car Management or Car Search sections.
+**Q: How do I know which cars are available?**
+A: Use the Car Search feature to see only available cars, or look at the status in Car Management.
 
-**Q: Can I generate reports for specific date ranges?**
-A: Yes, the Reports section allows filtering by date ranges.
+### Rental Questions
 
-**Q: How do I track rental status?**
-A: Use the Rental Management section to view and track all rental statuses.
+**Q: What if a customer returns a car early?**
+A: You can process the return normally. The system will calculate the correct amount based on how many days they actually used the car.
 
-**Q: Can I edit customer information?**
-A: Yes, use the Customer Management section to edit customer details.
+**Q: Can I see how much money we made today?**
+A: Yes, use the Reports section to see daily, weekly, or monthly revenue.
 
-**Q: How do I know if the system is working properly?**
-A: Look for success messages during startup and ensure all features are accessible.
-
----
-
-## 📞 Support
-
-For technical support or questions:
-
-- **Developer**: Md Toriqul Islam
-- **Email**: Contact via [Portfolio](https://thetoriqul.com/)
-- **GitHub**: [@TheToriqul](https://github.com/TheToriqul)
-- **Course**: PRG2201E - Object Oriented Programming
-- **Institution**: INTI International University
+**Q: What if I need to cancel a rental?**
+A: You can delete the rental from the Rental Management section, but be careful as this cannot be undone.
 
 ---
 
-## 📄 Version Information
+## 📞 Need Help?
 
-- **Version**: 1.0.0
-- **Release Date**: August 2025
-- **Last Updated**: September 2, 2025
-- **Java Version**: 15+
-- **Database**: SQLite 3.44.1
-- **Course**: PRG2201E - Object Oriented Programming
-- **Institution**: INTI International University
-- **Status**: Complete & Tested ✅
+If you have questions or problems that are not covered in this manual:
 
----
+1. **Ask your manager first** - they might know the answer
+2. **Check with your IT person** - for technical problems
+3. **Contact the developer** - for system problems
 
-## 🔄 Recent Updates
-
-### September 2, 2025 - System Verification
-
-- ✅ **Successfully Tested**: Application runs perfectly on macOS (darwin 24.6.0)
-- ✅ **Database Verification**: SQLite database initialization confirmed working
-- ✅ **Build System**: Automated build scripts verified and optimized
-- ✅ **User Authentication**: Login system fully functional with default credentials
-- ✅ **Cross-platform**: Compatibility confirmed for Windows, macOS, and Linux
-- ✅ **Documentation**: User manual updated with testing results and improvements
-
-### System Improvements
-
-- **Enhanced UI**: Modern interface with gradients and professional styling
-- **Optimized Performance**: Improved database operations and GUI responsiveness
-- **Better Error Handling**: Comprehensive error messages and troubleshooting guides
-- **Updated Dependencies**: Latest stable versions of all libraries
-- **Comprehensive Testing**: Full system functionality verified
-
-### What's Working
-
-- 🚀 **Application Launch**: Perfect startup with database initialization
-- 🔐 **User Authentication**: Secure login system with role-based access
-- 🚗 **Car Management**: Complete CRUD operations for vehicle inventory
-- 👥 **Customer Management**: Full customer database functionality
-- 📅 **Rental Operations**: Complete rental workflow from checkout to return
-- 📊 **Reporting System**: Comprehensive analytics and reporting
-- 👤 **User Management**: Complete user account administration
-- 🔍 **Search & Filter**: Advanced search across all entities
+**Remember:** It's better to ask questions than to make mistakes. Everyone is learning to use this system, so don't be afraid to ask for help!
 
 ---
 
-**Note**: This user manual covers all features of the Car Rental Management System. The system has been thoroughly tested and is fully operational. For technical documentation, please refer to the architecture and database schema documents in the `docs/technical/` directory.
-
-**System Status**: ✅ **FULLY OPERATIONAL & TESTED**
+**System Version:** 1.0.0  
+**Last Updated:** September 2025  
+**Status:** Ready to use ✅
