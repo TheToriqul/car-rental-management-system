@@ -392,7 +392,7 @@ public class UserManagementFrame extends JFrame {
         loadUserData();
       }
 
-      setSize(400, 200);
+      setSize(400, 300);
       setLocationRelativeTo(getParent());
     }
 

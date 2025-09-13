@@ -439,6 +439,7 @@ public class LoginFrame extends JFrame {
         usernameField.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(ModernUITheme.BORDER_LIGHT, 1),
                 new EmptyBorder(12, 18, 12, 18)));
+        usernameField.setToolTipText("Username is case-insensitive (e.g., 'admin' or 'ADMIN' both work)");
 
         gbc.gridx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -539,6 +540,26 @@ public class LoginFrame extends JFrame {
                     "Please enter both username and password.",
                     "Login Error",
                     JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Validate username format
+        if (username.length() < 3) {
+            JOptionPane.showMessageDialog(this,
+                    "Username must be at least 3 characters long.",
+                    "Invalid Username",
+                    JOptionPane.ERROR_MESSAGE);
+            usernameField.requestFocus();
+            return;
+        }
+
+        // Validate username contains only alphanumeric characters and underscores
+        if (!username.matches("^[a-zA-Z0-9_]+$")) {
+            JOptionPane.showMessageDialog(this,
+                    "Username can only contain letters, numbers, and underscores.",
+                    "Invalid Username",
+                    JOptionPane.ERROR_MESSAGE);
+            usernameField.requestFocus();
             return;
         }
 

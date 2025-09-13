@@ -499,7 +499,7 @@ public class CarManagementFrame extends JFrame {
         loadCarData();
       }
 
-      setSize(500, 450);
+      setSize(500, 650);
       setLocationRelativeTo(getParent());
     }
 

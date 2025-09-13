@@ -34,8 +34,8 @@ public class AuthenticationService {
             // Hash the password for comparison
             String hashedPassword = hashPassword(password);
 
-            // Query to check credentials
-            String query = "SELECT id, username, password, role FROM users WHERE username = ? AND password = ?";
+            // Query to check credentials with case-insensitive username comparison
+            String query = "SELECT id, username, password, role FROM users WHERE LOWER(username) = LOWER(?) AND password = ?";
 
             try (Connection conn = DatabaseManager.getConnection();
                     PreparedStatement pstmt = conn.prepareStatement(query)) {
