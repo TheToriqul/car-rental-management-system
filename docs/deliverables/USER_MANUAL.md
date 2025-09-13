@@ -869,7 +869,7 @@ If you have questions or problems that are not covered in this manual:
 ---
 
 **System Version:** 1.0.0  
-**Last Updated:** September 2025  
+**Last Updated:** September 13, 2025  
 **Status:** Ready to use ✅
 
 **This manual covers everything you need to know to use the Car Rental Management System effectively. Keep it handy and refer to it whenever you need help!**

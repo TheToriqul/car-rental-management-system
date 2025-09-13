@@ -254,7 +254,7 @@ java -jar build/car-rental-management-system.jar
 
 ### 🔄 Recent Updates
 
-- **Last Build**: September 2, 2025
+- **Last Build**: September 13, 2025
 - **Database**: SQLite 3.44.1 with latest JDBC driver
 - **Dependencies**: Updated to latest stable versions
 - **Documentation**: Comprehensive user manual and technical docs
@@ -327,6 +327,6 @@ This project is developed for academic purposes as part of the PRG2201E course a
 
 **Note**: This project demonstrates proficiency in Java programming, database management, GUI development, and software architecture principles. The system is production-ready and can be deployed in real car rental businesses with minimal modifications.
 
-**Last Updated**: September 2, 2025
+**Last Updated**: September 13, 2025
 **Version**: 1.0.0
 **Status**: Complete & Tested ✅
